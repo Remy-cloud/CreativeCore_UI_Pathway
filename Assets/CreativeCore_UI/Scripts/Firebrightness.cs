@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class Firebrightness : MonoBehaviour
+public class FireSlider : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public ParticleSystem[] fireParticles;
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeFire(float value)
     {
-        
+        foreach (ParticleSystem fire in fireParticles)
+        {
+            var main = fire.main;
+            main.startSizeMultiplier = value;
+        }
     }
 }
